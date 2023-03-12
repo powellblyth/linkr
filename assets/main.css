@@ -12,3 +12,30 @@ footer {
     font-size: 12px;
     padding-top: 2px;
   }
+
+  tr.header
+  {
+    background-color: #38275B;
+    color:white;
+    font-size: larger;
+    text-align: center;
+    padding:2px;
+  }
+  .tag
+  {
+    background-color: #38275B;
+    border-radius: 4px;
+    padding:2px;
+    color:white;
+    margin-right:2px;
+  }
+
+  a.btn-erp-link
+  {
+    border-radius:2px;
+    border: 1px solid grey;
+    font-size:10px;
+  }
+  a.btn-erp-link:hover{
+    background-color: silver;
+  }

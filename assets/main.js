@@ -1,7 +1,7 @@
 
 (function () {
     var client = ZAFClient.init();
-    client.invoke('resize', { width: '100%', height: '120px' });
+    client.invoke('resize', { width: '100%', height: '200px' });
 
 client.context().then(function(context) {
     console.log(context.location);

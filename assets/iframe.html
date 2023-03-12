@@ -17,38 +17,39 @@
   </footer>
 
   <script id="requester-template" type="text/x-handlebars-template">
-    <table>
-    <tr>
+    <table style="width:100%">
+    <!-- <tr>
       <td>Customer:</td>
       <td class="data">{{name}}</td>
-    </tr>
+    </tr> -->
     {{#if tags}}
-    <tr>
-      <td>Tags:</td>
-      <td class="data">{{#each tags}}{{this}} {{/each}}</td>
+      <thead><tr class="header"><td>Tags</td></tr></thead>
+    <tr >
+      <td style="padding-bottom:8px;"><span class="data tag">{{#each tags}}{{this}} {{/each}}</span> </td>
     </tr>
     {{/if}}
-    <tr>
+    <!-- <tr>
       <td>Added:</td>
       <td class="data">{{created_at}}</td>
-    </tr>
+    </tr> -->
+    <thead><tr class="header"><td>ERP Links</td></tr></thead>
     <tr>
-      <td>ERP Links:</td>
       <td class="data">
         {{#if person_id}}
-          <a class="btn" href="https://erp.fitchlearning.com/erp/main_csms_delegates.php?person_ID={{person_id}}">[ERP]</a>
-          <a href="https://erpqa.dev.fitchlearning.com/erp/main_csms_delegates.php?person_ID={{person_id}}">[QA ERP]</a>
+          <a class="btn btn-erp-link" target="_blank" href="https://erp.fitchlearning.com/erp/main_csms_delegates.php?person_ID={{person_id}}">CSM View</a>
+          <a class="btn btn-erp-link" target="_blank" href="https://erpqa.dev.fitchlearning.com/erp/main_csms_delegates.php?person_ID={{person_id}}">QA CSM View</a>
+          <br />
         {{/if}}
         {{#if company_id}}
-        <a href="https://erpqa.dev.fitchlearning.com/erp/main_csms_company_manage.php?company_ID={{company_id}}">[Company]</a>
-        <a href="https://erpqa.dev.fitchlearning.com/erp/main_csms_company_manage.php?company_ID={{company_id}}">[QA Company]</a>
+        <a class="btn btn-erp-link" target="_blank" href="https://erpqa.dev.fitchlearning.com/erp/main_csms_company_manage.php?company_ID={{company_id}}">Company View</a>
+        <a class="btn btn-erp-link" target="_blank" href="https://erpqa.dev.fitchlearning.com/erp/main_csms_company_manage.php?company_ID={{company_id}}">QA Company View</a>
         {{/if}}
       </td>
     </tr>
-    <tr>
+    <!-- <tr>
       <td>Last signed in:</td>
       <td class="data">{{last_login_at}}</td>
-    </tr>
+    </tr> -->
     </table>
 </script>
 <script id="error-template" type="text/x-handlebars-template">
