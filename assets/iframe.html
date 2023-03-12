@@ -33,6 +33,19 @@
       <td class="data">{{created_at}}</td>
     </tr>
     <tr>
+      <td>ERP Links:</td>
+      <td class="data">
+        {{#if person_id}}
+          <a class="btn" href="https://erp.fitchlearning.com/erp/main_csms_delegates.php?person_ID={{person_id}}">[ERP]</a>
+          <a href="https://erpqa.dev.fitchlearning.com/erp/main_csms_delegates.php?person_ID={{person_id}}">[QA ERP]</a>
+        {{/if}}
+        {{#if company_id}}
+        <a href="https://erpqa.dev.fitchlearning.com/erp/main_csms_company_manage.php?company_ID={{company_id}}">[Company]</a>
+        <a href="https://erpqa.dev.fitchlearning.com/erp/main_csms_company_manage.php?company_ID={{company_id}}">[QA Company]</a>
+        {{/if}}
+      </td>
+    </tr>
+    <tr>
       <td>Last signed in:</td>
       <td class="data">{{last_login_at}}</td>
     </tr>

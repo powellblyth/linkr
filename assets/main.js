@@ -1,20 +1,43 @@
+
 (function () {
     var client = ZAFClient.init();
     client.invoke('resize', { width: '100%', height: '120px' });
 
-    client.get('ticket.requester.id').then(
-        function(data) {
-          var user_id = data['ticket.requester.id'];
-          requestUserInfo(client, user_id);
-        }
-      );
+client.context().then(function(context) {
+    console.log(context.location);
+    // Check which page we are on
+    if (context.location == 'ticket_sidebar')
+    {
+        client.get('ticket.requester.id').then(
+            function(data) {
+              var user_id = data['ticket.requester.id'];
+              requestUserInfo(client, user_id);
+            }
+          );
+    }
+    else if (context.location == 'user_sidebar')
+    {
+        client.get('user.id').then(
+            function(data) {
+                console.log(data)
+              var user_id = data['user.id'];
+              requestUserInfo(client, user_id);
+            }
+          );
+
+    }
+    })
+
+
 })();
 
-
 function showInfo(data) {
+    console.log( data.user.user_fields.fake_external_id)
     var requester_data = {
         'name': data.user.name,
         'tags': data.user.tags,
+        'person_id': data.user.user_fields.fake_external_id,
+        'company_id': data.user.user_fields.company_id,
         'created_at': formatDate(data.user.created_at),
         'last_login_at': formatDate(data.user.last_login_at)
     };

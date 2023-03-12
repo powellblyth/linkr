@@ -7,7 +7,7 @@ Allows Zendesk to link to ERP
 based on a tutorial here
 https://developer.zendesk.com/documentation/apps/build-an-app/build-your-first-support-app/part-1-laying-the-groundwork/
 
-
+CD into the project folder
 
 `npm install @zendesk/zcli -g`
 Checkit:
